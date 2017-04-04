@@ -259,7 +259,7 @@ textarea {
 }
 
 #site-main {
-	padding: 0 50px;
+	padding: 0 25px;
 }
 
 #site-footer {
@@ -273,17 +273,78 @@ textarea {
 .logo {
 	display: block;
 	background: transparent url(../img/logo.png) no-repeat 0 0;
-	background-size: cover;
-	width: 356px;
+	background-size: contain;
+	max-width: 356px;
 	height: 92px;
 	margin: 75px auto 50px;
 }
 
 #site-main .wrap {
 	margin: 0 auto;
-	max-width: 500px;
+	max-width: 960px;
 }
 
 #site-footer {
 	padding-bottom: 25px;
+}
+
+.featured {
+	background-color: rgba(255,255,255,0.1);
+	padding: 1.25rem 1.5rem 1px;
+	margin: -10px 25px 2rem;
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+}
+
+hr {
+	clear: both;
+	height: 1px;
+	width: 50%;
+	border: none;
+	border-bottom: 1px solid #fff;
+	background-color: transparent;
+	margin: 0 auto 2.5rem;
+	padding: 1.5rem 0 0;
+}
+
+.column {
+	float: left;
+	width: 50%;
+	max-width: 720px;
+	padding: 0 25px;
+}
+
+a {
+	color: #ec2121;
+}
+
+
+@media (max-width: 720px) {
+	.column {
+		width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	.logo {
+		margin-left: -25px;
+		margin-right: -25px;
+		margin-top: 50px;
+		margin-bottom: 25px;
+	}
+
+	h1 {
+		font-size: 30px;
+	}
+
+	h2 {
+		font-size: 26px;
+	}
+
+	h3 {
+		font-size: 22px;
+	}
 }
