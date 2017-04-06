@@ -1,6 +1,3 @@
-# Don't include VVV specifics
-vvv-nginx.conf
-
 # Don't include Node.js stuff
 node_modules/
 
