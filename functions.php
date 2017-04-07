@@ -47,20 +47,6 @@ function ejo_theme_setup()
 	define( 'THEME_JS_URI', THEME_URI . 'assets/js/' );
 	define( 'THEME_CSS_URI', THEME_URI . 'assets/css/' );
 
-	/* Custom Logo */
-	add_theme_support( 'custom-logo', array(
-		'width'		  => 320,
-		'height'      => 40,
-		'flex-width'  => true,
-		'flex-height'  => true,
-	) );
-
-	/* Custom header image */
-	add_theme_support( 'custom-header', array(
-		'uploads'                => true,
-		'header-text'            => false,
-	));
-
 	/* Enable custom template hierarchy. */
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 

@@ -1,0 +1,36 @@
+/* Links
+-------------------------------------------------------------------*/
+$links: 'a:not(.button)';
+// $textcontent-links: selector-nest(#{$textcontent}, #{$links});
+
+@mixin on-link-event
+{
+	@include on-event {
+		text-decoration: underline;
+	}	
+}
+
+/* Link reset */
+a {
+	text-decoration: none;
+    color: $color-primary;
+}
+
+/* Link style */
+#{$links} {
+	@include on-link-event;
+}
+
+.more-link {
+	color: $color-primary;
+	font-style: italic;
+}
+
+@mixin reset-link 
+{
+	&:not(.button) {
+		@include on-event {
+			text-decoration: none;
+		}
+	}
+}

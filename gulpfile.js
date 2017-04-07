@@ -50,6 +50,9 @@ gulp.task('sass:run', function () {
             outputStyle: 'expanded'
         }))
         .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
+        .pipe(rename({
+            basename: 'theme'
+        }))
         .pipe(gulp.dest(dir.dist.sass));
 
     //* Create minified stylesheet
@@ -60,6 +63,7 @@ gulp.task('sass:run', function () {
         }))
         .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
         .pipe(rename({
+            basename: 'theme',
             suffix: '.min'
         }))
         .pipe(gulp.dest(dir.dist.sass));

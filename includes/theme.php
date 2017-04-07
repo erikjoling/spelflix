@@ -21,6 +21,9 @@ add_action( 'init', 'ejo_register_menus', 5 );
 /* Register sidebars. */
 add_action( 'widgets_init', 'ejo_register_sidebars', 5 );
 
+/* Register widgets. */
+add_action( 'widgets_init', 'ejo_register_widgets', 5 );
+
 //* Remove styles & scripts
 add_action( 'wp_print_styles', 'ejo_remove_styles_and_scripts', 99 );
 
@@ -33,6 +36,9 @@ add_action( 'admin_init', 'ejo_add_editor_styles' );
 /* Add style formats */
 add_filter( 'ejo_tinymce_style_formats', 'ejo_extra_style_formats' );
 
+// Remove link from excerpt
+add_filter( 'excerpt_more', 'ejo_no_excerpt_link' );
+
 /**
  * Registers custom image sizes for the theme. 
  *
@@ -42,7 +48,7 @@ add_filter( 'ejo_tinymce_style_formats', 'ejo_extra_style_formats' );
  */
 function ejo_register_image_sizes() 
 {
-	// add_image_size( 'banner', 960, 240, true ); 
+	add_image_size( 'banner', 1920, 300, true ); 
 }
 
 /**
@@ -77,7 +83,55 @@ function ejo_register_menus()
  */
 function ejo_register_sidebars() 
 {
-	
+	hybrid_register_sidebar(
+		array(
+			'id'          => 'home-banner',
+			'name'        => 'Home Banner',
+			'description' => 'Drag widgets to here',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => ''
+		)
+	);
+
+	hybrid_register_sidebar(
+		array(
+			'id'          => 'home-content',
+			'name'        => 'Home Content',
+			'description' => 'Drag widgets to here',
+			'before_widget' => '<div id="%1$s" class="widget column %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>'
+		)
+	);
+
+	hybrid_register_sidebar(
+		array(
+			'id'          => 'footer',
+			'name'        => 'Footer',
+			'description' => 'Drag widgets to here',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>'
+		)
+	);
+}
+
+/**
+ * Registers Widgets.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+function ejo_register_widgets() 
+{ 
+	//* Load the Hybrid Core framework and theme files.
+	require_once( THEME_DIR . 'includes/home-banner-widget.php' );
+    register_widget( 'SF_Home_Banner_Widget' ); 
 }
 
 
@@ -102,7 +156,7 @@ function ejo_add_styles_and_scripts()
 
 	//* Styles
 	/* Load Font */
-	// wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i' );
+	wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i' );
 
 	/* Load active theme stylesheet. */
 	wp_enqueue_style( 'theme', THEME_CSS_URI . "theme{$suffix}.css", false, THEME_VERSION );
@@ -136,4 +190,11 @@ function ejo_extra_style_formats($style_formats)
     );
 
     return $style_formats;
+}
+
+/**
+ * Remove link from excerpt
+ */
+function ejo_no_excerpt_link( $more ) {
+	return ' [...]';
 }

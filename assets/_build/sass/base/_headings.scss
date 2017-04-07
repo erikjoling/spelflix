@@ -1,0 +1,33 @@
+/* Headings
+-------------------------------------------------------------------*/
+$default-headings: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6';
+
+// Reset headings
+@mixin reset-heading {
+
+}
+
+#{$default-headings} {
+	margin-top: 0;
+	@include font-appearance(primary, bold);
+}
+
+h1 {
+    @include font-dimension(h1);
+    margin-bottom: 2.5rem;
+}
+
+h2 {
+	@include font-dimension(h2);
+	margin-bottom: 2rem;
+}
+
+h3 {
+	@include font-dimension(h3);
+	margin-bottom: 1.5rem;
+}
+
+h4, h5, h6 { 
+	@include font-dimension(h4);
+	margin-bottom: 1rem;
+}

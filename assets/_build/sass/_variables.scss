@@ -1,0 +1,92 @@
+////
+// Paths
+////
+$img-path: '../img/';
+
+////
+// COLORS
+////
+
+// Color Library
+//
+$red: #ec2121;
+$black: #222222;
+$white: #FFFFFF;
+$gray: #DDDDDD;
+
+$color-primary: $red;
+$color-secondary: $white;
+
+////
+// TYPOGRAPHY
+////
+
+// Font dimensions
+//
+$font-dimensions: (
+	base: (
+		font-size:   16,
+		line-height: 24,
+	),
+	sm: (
+		font-size:   14,
+		line-height: 24,
+	),
+	xs: (
+		font-size:   12,
+		line-height: 12,
+	),
+	lg: (
+		font-size: 20,
+		line-height: 24,
+	),
+	xl: (
+		font-size:   26,
+		line-height: 30,
+	),
+	h1: (
+		font-size:   45,
+		line-height: 48,
+	),
+	h2: (
+		font-size:   38,
+		line-height: 42,
+	),
+	h3: (
+		font-size:   26,
+		line-height: 26,
+	),
+	h4: (
+		font-size:   19,
+		line-height: 24,
+	),
+);
+
+// Font family
+//
+$font-families: (
+	primary: (
+		stack: ('Open Sans', sans-serif),
+		weights: (
+			light: 400,
+			normal: 400,
+			bold: 700
+		)
+	),
+);
+
+////
+// SIZES
+////
+
+$container-max-width: 560px;
+
+// Breakpoints mobile-first
+$breakpoints: (
+	xs:  0,
+	sm:  480px,
+	// md:  720px,
+	// lg:  960px,
+	md:  9999px,
+	lg:  9999px,
+);

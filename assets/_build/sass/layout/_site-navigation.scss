@@ -1,0 +1,35 @@
+.menu-primary {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+	
+	ul { 
+		@include reset-list; 
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-left: -0.75rem;
+		margin-right: -0.75rem;
+	}
+
+	li { 
+		display: block;
+		margin-left: 0.75rem;
+		margin-right: 0.75rem;
+
+		&.current {
+		}
+	}
+
+	a {
+		@include reset-link;
+		display: block;
+		color: inherit;
+		font-weight: get-font-weight(bold);
+
+		@include on-event {
+			color: $color-primary;
+		}
+	}
+}
