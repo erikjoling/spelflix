@@ -11,6 +11,12 @@
 
 				<?php hybrid_get_content_template(); // Loads the content/*.php template. ?>
 
+				<?php if ( is_singular( 'post' ) ) : // If viewing a single post/page/CPT. ?>
+
+					<?php comments_template( '', true ); // Loads the comments.php template. ?>
+
+				<?php endif; // End check for single post. ?>
+
 			<?php endwhile; // End found posts loop. ?>
 
 		<?php else : // If no posts were found. ?>

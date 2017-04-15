@@ -30,7 +30,29 @@ textarea {
 #{$form-text-inputs},
 select,
 textarea {
-	padding: 0.33rem;
-	border-radius: 4px;
-	border: 2px solid $gray;
+	// padding: 0.33rem;
+	// border-radius: 4px;
+	// border: 2px solid $gray;
+	border: 1px solid $gray;
+	// border-radius: 3px;	
+	padding: rem(4) rem(8);
+	background-color: $white;
+
+	&:hover {
+		// border-color: palette(grey, dark);
+	}
+
+	&:focus {
+		// color: palette(black);
+		border-color: palette(primary);
+	}
+}
+
+select {
+	padding: rem(7) rem(8) rem(6);
+}
+
+textarea {
+	resize: vertical;
+	min-height: 100px;
 }

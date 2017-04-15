@@ -55,4 +55,9 @@ function ejo_theme_setup()
 
 	/* Yoast Breadcrumbs */
 	add_theme_support( 'yoast-seo-breadcrumbs' );
+
+	/* Remove toolbar */
+	if ( !current_user_can('administrator') && !is_admin() ) {
+		show_admin_bar(false);
+	}
 }

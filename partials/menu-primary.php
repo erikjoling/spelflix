@@ -12,6 +12,10 @@
 				'items_wrap'      => '<ul id="%s" class="%s">%s</ul>'
 			)
 		); ?>
+		
+		<ul class="user-area">
+			<li class="menu-item"><a class="button" href="">Login</a></li>
+		</ul>
 
 	</nav><!-- #menu-primary -->
 

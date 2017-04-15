@@ -245,9 +245,24 @@ textarea {
 input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), input:not([type]),
 select,
 textarea {
-  padding: 0.33rem;
-  border-radius: 4px;
-  border: 2px solid #DDDDDD;
+  border: 1px solid #DDDDDD;
+  padding: 0.25rem 0.5rem;
+  background-color: #FFFFFF;
+}
+
+input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):focus, input:not([type]):focus,
+select:focus,
+textarea:focus {
+  border-color: palette(primary);
+}
+
+select {
+  padding: 0.4375rem 0.5rem 0.375rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 /* Buttons
@@ -567,4 +582,123 @@ body {
 
 .home-content .column {
   margin-bottom: 1.5rem;
+}
+
+.comment-list,
+.comment-list .children {
+  margin: 0;
+  list-style: none;
+}
+
+#comments-template {
+  margin-bottom: 1.5rem;
+}
+
+.comment-respond {
+  margin-bottom: 1.5rem;
+}
+
+#comments .comment article,
+.comment-respond {
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+#comments .children,
+#comments .comment-respond {
+  margin-left: 2rem;
+}
+
+#comments {
+  position: relative;
+}
+
+#comments .comments-title {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  float: right;
+}
+
+#comments .comment-list {
+  clear: both;
+}
+
+#comments .comment article {
+  border-left: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  margin-bottom: -1px;
+}
+
+#comments .comment .comment-meta {
+  margin-bottom: 1em;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+#comments .comment .comment-meta .comment-author {
+  font-style: normal;
+  margin-right: 1px;
+}
+
+#comments .comment .comment-meta .comment-published {
+  margin: 0 1px;
+}
+
+#comments .comment .comment-meta .comment-reply-link {
+  margin: 0 1px;
+}
+
+#comments .comment .comment-content p:not(:last-child) {
+  margin-bottom: 0.75em;
+}
+
+.comment-respond {
+  border-left: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  margin-bottom: -1px;
+  position: relative;
+}
+
+.comment-respond .comment-reply-title {
+  margin-bottom: 2rem;
+}
+
+.comment-respond #cancel-comment-reply-link {
+  position: absolute;
+  right: 0;
+  margin-top: 2px;
+}
+
+.comment-respond .comment-form-comment,
+.comment-respond .comment-form-legit,
+.comment-respond .comment-form-author,
+.comment-respond .comment-form-email {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.comment-respond .comment-form-legit {
+  display: none;
+}
+
+.comment-respond label {
+  color: palette(grey, dark);
+  position: absolute;
+  pointer-events: none;
+  left: 0px;
+  top: 2px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.comment-respond label.superscript,
+.show-if-no-js .comment-respond label {
+  top: -1.125rem;
+  font-size: 0.875rem;
 }
