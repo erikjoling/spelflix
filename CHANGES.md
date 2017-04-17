@@ -1,5 +1,6 @@
+- Support for language
+- Support for template file in `partials` folder
 - Support for comments
-- Support user registration
 
 0.2
 - Created almost whole website :)

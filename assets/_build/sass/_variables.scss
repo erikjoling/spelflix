@@ -12,7 +12,7 @@ $img-path: '../img/';
 $red: #ec2121;
 $black: #222222;
 $white: #FFFFFF;
-$gray: #DDDDDD;
+$gray: #BBBBBB;
 
 $color-primary: $red;
 $color-secondary: $white;
@@ -34,7 +34,7 @@ $font-dimensions: (
 	),
 	xs: (
 		font-size:   12,
-		line-height: 12,
+		line-height: 16,
 	),
 	lg: (
 		font-size: 20,
@@ -66,6 +66,14 @@ $font-dimensions: (
 //
 $font-families: (
 	primary: (
+		stack: ('Open Sans', sans-serif),
+		weights: (
+			light: 400,
+			normal: 400,
+			bold: 700
+		)
+	),
+	secondary: (
 		stack: ('Open Sans', sans-serif),
 		weights: (
 			light: 400,

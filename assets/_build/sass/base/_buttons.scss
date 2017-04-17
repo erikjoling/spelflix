@@ -19,11 +19,13 @@ $buttons:   'button',
 // Buttons
 //
 #{$buttons} {
-	padding: 0.25rem 1rem;
+    @include font-dimension(base);
+	padding: 0.3333rem 1rem;
     border-radius: 5px;
     border: 1px solid $color-primary;
 	background-color: rgba($color-primary, 0);
     color: $color-primary;
+    transition: all 0.2s ease;
 
     @include on-event {
         background-color: $color-primary;

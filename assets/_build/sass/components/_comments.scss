@@ -46,20 +46,22 @@
 			border-left: 1px solid $gray;
 			border-top: 1px solid $gray;
 			border-bottom: 1px solid $gray;
-			margin-bottom: -1px;
+			// margin-bottom: -1px;
 		}
 		
 		.comment-meta {
 			margin-bottom: 1em;
 			font-size: get-font-size(sm);
 			line-height: 1;
+			color: $gray;
 
 			.comment-author {
-				// font-size: $font__family;
-				// font-family: $font__family-heading;
-				// font-weight: $font__weight-bold;
-				font-style: normal;
 				margin-right: 1px;
+				font-familiy: get-font-familiy(secondary);
+				font-weight: get-font-weight(bold, secondary);
+				font-size: get-font-size(base);
+				font-style: normal;
+				color: $white;
 			}
 
 			.comment-published {
@@ -68,6 +70,7 @@
 
 			.comment-reply-link {
 				margin: 0 1px;
+				color: inherit;
 				&:before {
 					// @include icon('fa-reply');
 					// padding-right: 4px;
@@ -95,55 +98,74 @@
 	position: relative;
 
 	.comment-reply-title {
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 
 	#cancel-comment-reply-link {
-		// font-family: $font__family;
-		// font-weight: $font__weight-bold;
 		position: absolute;
 		right: 0;
 		margin-top: 2px;
+		text-decoration: none;
 
-		.fa:hover {
-			// color: $color-primary;
+		.icon:before {
+			content: '\00d7';
+		}
+
+		.icon:hover:before {
+			color: lighten($color-primary, 10%);
 		}
 	}
 
 	.comment-form-comment,
 	.comment-form-legit,
 	.comment-form-author,
-	.comment-form-email {
-		position: relative;
-		margin-bottom: 2rem;
+	.comment-form-url,
+	.comment-form-email {}
+
+	label {
+		@include font-dimension(sm);
+		display: block;
+	}
+
+	.comment-form-comment {
+		textarea {
+			width: 100%;
+		}
 	}
 
 	//* Hide spamfield
 	.comment-form-legit {
 		display: none;
 	}
+	
+	.comment-form-footer {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 1.5rem;
+		margin-bottom: 1rem;
+		margin-left: -0.75rem;
+		margin-right: -0.75rem;
+	}
 
 	.form-submit {
-		// margin-bottom: 0;
+		flex-basis: auto;
+		flex-grow: 0;
+		flex-shrink: 0;
+		margin-left: 0.75rem;
+		margin-right: 0.75rem;
 	}
 
-	label {
-		color: palette(grey, dark);
-		position:absolute;
-		pointer-events: none;
-		left: 0px;
-		top: 2px;
-		transition:0.2s ease all; 
-		-moz-transition:0.2s ease all; 
-		-webkit-transition:0.2s ease all;
+	.comment-form-notice {
+		@include font-dimension(xs);
 
-		&.superscript,
-		.show-if-no-js & {
-			top: - rem(18);
-			font-size: rem(14);
-			// color: inherit;
-			// font-weight: $font__weight-bold;
-		}
+		flex-basis: 100px;
+		flex-grow: 1;
+		flex-shrink: 0;
+		margin-top: 2px;
+		margin-left: 0.75rem;
+		margin-right: 0.75rem;
+		color: $gray;
 	}
+
 }
 

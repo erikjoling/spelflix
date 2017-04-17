@@ -47,7 +47,7 @@ function ejo_theme_setup()
 	define( 'THEME_JS_URI', THEME_URI . 'assets/js/' );
 	define( 'THEME_CSS_URI', THEME_URI . 'assets/css/' );
 
-	/* Enable custom template hierarchy. */
+	// Enable custom template hierarchy. 
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 
 	// Better image grabbing
@@ -55,6 +55,7 @@ function ejo_theme_setup()
 
 	/* Yoast Breadcrumbs */
 	add_theme_support( 'yoast-seo-breadcrumbs' );
+
 
 	/* Remove toolbar */
 	if ( !current_user_can('administrator') && !is_admin() ) {
