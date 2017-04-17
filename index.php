@@ -11,7 +11,7 @@
 
 				<?php hybrid_get_content_template(); // Loads the content/*.php template. ?>
 
-				<?php if ( is_singular( 'post' ) ) : // If viewing a single post/page/CPT. ?>
+				<?php if ( is_singular() ) : // If viewing a single post/page/CPT. ?>
 
 					<?php comments_template( '', true ); // Loads the comments.php template. ?>
 
@@ -21,7 +21,7 @@
 
 		<?php else : // If no posts were found. ?>
 
-			<?php locate_template( array( 'content/error.php' ), true ); // Loads the content/error.php template. ?>
+			<?php locate_template( array( 'template-parts/content/error.php' ), true ); // Loads the template-parts/content/error.php template. ?>
 
 		<?php endif; // End check for posts. ?>
 

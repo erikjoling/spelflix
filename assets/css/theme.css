@@ -170,6 +170,7 @@ i, em, mark, cite {
 -------------------------------------------------------------------*/
 p {
   margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 
 p.intro {
@@ -187,6 +188,16 @@ embed,
 iframe {
   max-width: 100%;
   height: auto;
+}
+
+img,
+figure,
+audio,
+video,
+object,
+embed,
+iframe {
+  margin: 0 0 1.5rem;
 }
 
 /* Horizontal Rule
@@ -538,6 +549,20 @@ body {
   margin-bottom: 2rem;
 }
 
+.home-posts .post .entry-image {
+  display: block;
+  margin: -1.5rem -1.5rem 0;
+}
+
+.home-posts .post .entry-image .thumbnail {
+  display: block;
+  width: 100%;
+  height: 180px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
 .home-posts .post.has-post-thumbnail .entry-title {
   margin-top: -2.75rem;
   margin-bottom: 2.5rem;
@@ -587,6 +612,25 @@ body {
 
 .home-content .column {
   margin-bottom: 1.5rem;
+}
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .comment-list,
@@ -742,4 +786,57 @@ body {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
   color: #BBBBBB;
+}
+
+img.alignleft,
+img.alignright {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.emoji,
+.wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+  height: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+/* Caption */
+.wp-caption,
+.gallery-caption {
+  color: #BBBBBB;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-style: italic;
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+.wp-caption img,
+.gallery-caption img {
+  margin-bottom: 0;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+  padding: 0.75rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
 }

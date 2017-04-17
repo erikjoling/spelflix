@@ -214,12 +214,12 @@ function ejo_no_excerpt_link( $more ) {
 }
 
 /**
- * Add `partials` folder to beginning of hybrid templates
+ * Add `template-parts` folder to beginning of hybrid templates
  */
 function sf_file_structure( $templates )
 {
 	foreach ($templates as &$template) {
-		$template = 'partials/'.$template;
+		$template = 'template-parts/'.$template;
 	}
 	unset($template);
 	

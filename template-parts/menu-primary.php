@@ -13,9 +13,13 @@
 			)
 		); ?>
 		
+		<?php 
+		/*
 		<ul class="user-area">
 			<li class="menu-item"><a class="button" href="">Login</a></li>
 		</ul>
+		*/
+		?>
 
 	</nav><!-- #menu-primary -->
 

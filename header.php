@@ -17,7 +17,7 @@
 					<span class="screen-reader-text" itemprop="name"><?php bloginfo( 'name' ); ?></span>
 				</div><!-- #branding -->
 
-				<?php locate_template( array( 'partials/menu-primary.php' ), true ); // Loads the menu-primary.php template. ?>
+				<?php locate_template( array( 'template-parts/menu-primary.php' ), true ); // Loads the menu-primary.php template. ?>
 				
 			</div><!-- .wrap -->
 

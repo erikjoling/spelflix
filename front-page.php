@@ -27,9 +27,19 @@
 					?>
 					
 					<header class="entry-header">
-						<?php if (has_post_thumbnail()) : ?>						
-							
-							<?php echo get_the_image( array( 'size' => 'medium', 'link_class' => 'featured-image' )); ?>
+						<?php if (has_post_thumbnail()) : ?>
+
+						<?php 
+							$image_id = get_post_thumbnail_id(get_the_ID());
+							$image = wp_get_attachment_image_src($image_id, 'medium');
+							$image_src = $image[0];
+						?>
+
+							<a class="entry-image" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+								<div class="thumbnail" style="background-image: url(<?= $image_src; ?>);"></div>
+							</a>
+
+							<?php //echo get_the_image( array( 'size' => 'medium', 'link_class' => 'featured-image' )); ?>
 
 						<?php endif; ?>
 

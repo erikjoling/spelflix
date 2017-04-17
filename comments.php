@@ -2,6 +2,9 @@
 // If a post password is required or no comments are given and comments/pings are closed, return.
 if ( post_password_required() || ( !have_comments() && !comments_open() && !pings_open() ) )
 	return;
+
+if ( is_singular( 'page' ) && !comments_open() )
+	return;
 ?>
 
 <section id="comments-template">
@@ -22,13 +25,13 @@ if ( post_password_required() || ( !have_comments() && !comments_open() && !ping
 				); ?>
 			</ol><!-- .comment-list -->
 
-			<?php locate_template( array( 'partials/comment/comments-nav.php' ), true ); // Loads the partials/comment/comments-nav.php template. ?>
+			<?php locate_template( array( 'template-parts/comment/comments-nav.php' ), true ); // Loads the template-parts/comment/comments-nav.php template. ?>
 
 		</div><!-- #comments-->
 
 	<?php endif; // End check for comments. ?>
 
-	<?php locate_template( array( 'partials/comment/comments-error.php' ), true ); // Loads the partials/comment/comments-error.php template. ?>
+	<?php locate_template( array( 'template-parts/comment/comments-error.php' ), true ); // Loads the template-parts/comment/comments-error.php template. ?>
 
 	<?php
 		$args = array(

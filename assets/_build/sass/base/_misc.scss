@@ -21,7 +21,7 @@ i, em, mark, cite {
 
 p {
     margin-top: 0;
-    // margin-bottom: space-y();
+    margin-bottom: 1.5rem;
 
     &.intro {
         @include font-weight(bold, primary);
@@ -41,13 +41,14 @@ iframe {
     height: auto;
 }
 
+img,
 figure,
 audio,
 video,
 object,
 embed,
 iframe {
-    // margin: 0 0 space-y();
+    margin: 0 0 1.5rem;
 }
 
 /* Horizontal Rule
