@@ -1,3 +1,6 @@
+0.3.1
+- On comment, only notify info@spelflix.com
+
 0.3
 - Added support for image alignment and captions
 - Improved plural post header image

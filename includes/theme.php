@@ -53,6 +53,9 @@ add_filter( 'comment_form_submit_field', 'sf_comment_form_footer', 10, 2 );
 add_filter( 'comment_form_default_fields', 'sf_comments_add_honeypot_fields' );
 add_action( 'preprocess_comment', 'sf_preprocess_comment_honeypot_fields' );
 
+// Notify admin on comment
+add_filter('comment_notification_recipients', 'sf_comment_notification_recipients', 10, 2);
+
 /**
  * Registers custom image sizes for the theme. 
  *
@@ -290,4 +293,13 @@ function sf_preprocess_comment_honeypot_fields( $commentdata )
 		die('Bleep! Please do not comment..');
 
 	return $commentdata;
+}
+
+/**
+ * Notify the main spelfix email-account
+ */ 
+function sf_comment_notification_recipients($emails, $comment_id) 
+{
+	$emails = array('info@spelflix.com');
+	return $emails;
 }
